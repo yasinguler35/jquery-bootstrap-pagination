@@ -4,7 +4,12 @@ let lisayisi=$("table#listele tbody tr").length;
 //sayfada kaç veri gösterilecek
 let sayfaveri=3
 //kaç sayfa olacak
-let sayfasayisi=Math.round(lisayisi/sayfaveri)+1
+let sayfasayisi;
+if (lisayisi%sayfaveri==0) {
+    sayfasayisi=Math.round(lisayisi/sayfaveri)
+} else {
+    sayfasayisi=Math.round(lisayisi/sayfaveri)+1
+}
 
 
 $("table#listele tbody tr:gt("+(sayfaveri-1)+")").hide()
