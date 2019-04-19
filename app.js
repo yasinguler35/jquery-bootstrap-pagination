@@ -20,13 +20,14 @@ for (let i = 1; i < sayfasayisi; i++) {
 }
 
 //aktif sayfa sayısını gösterir
-$("ul#sayfalama a:first").addClass("aktif")
+$("ul#sayfalama li:first").addClass("page-link active")
 
 $("ul#sayfalama li").click(function() {
 
     let index=$(this).index()+1
     let gt=sayfaveri*index;
-
+    $("ul#sayfalama li").removeClass()  
+    $("ul#sayfalama li:eq("+(index-1)+")").addClass("page-link active")  
     //sayfa sayısına tıklandığında gizle
     $("table#listele tbody tr").hide()
 
